@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 10px;
+            background-image: url(learning.jpg);
+            background-size:100%;
+
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size:50px;
+        }
+        
+        p {
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        /* Tab Styles */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .tab {
+            padding: 20px 50px;
+            background-color: inherit;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .tab:hover {
+            background-color: #333;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+        
+        /* Tab Content Styles */
+        #tab1-content {
+            background-color: #a61895;
+        }
+        
+        #tab2-content {
+            background-color: #1b8d85;
+        }
+        
+        #tab3-content {
+            background-color: #b55a6b;
+        }
+        
+        #tab4-content {
+            background-color: #4BC0C0;
+        }
+        #tab5-content {
+            background-color: #20aa35;
+        }
+
+        ul li{
+            align-items: center;
+        }
+    </style>
+</head>
+<body >
+    <div class="container">
+        <h1>Welcome to Tusome School</h1>
+        <p>Click the tab to view its content</p>
+        
+        <div class="tabs">
+            <div class="tab" onclick="showTab(1)">Staffs</div>
+            <div class="tab" onclick="showTab(2)">Fuculties</div>
+            <div class="tab" onclick="showTab(3)">Our branches</div>
+            <div class="tab" onclick="showTab(4)">Leaders</div>
+            <div class="tab" onclick="showTab(5)">Contact Us</div>
+        </div>
+        
+        <div id="tab1-content" class="tab-content">
+            <h2 align="center">Tusome school Staff</h2>
+            <p>The following are some of our staffs and briefs of their responsibilities.</p>
+            <ol >
+                <li>Mr.John Njoroge - Pricipal Tusome School</li>
+                <li>Mr.Charles Mukwwa -Deputy Pricipal Tusome School</li>
+                <li>Mr.Ezekiel watatu- Head of Fuculty Science Engineering and tecgnology</li>
+                <li>Mrs. Jemimah Mmoja- Head of Fuculty Agriculture</li>
+                <li>Mrs. Jemimah Mmoja- Head of Fuculty Humanities</li>
+                <li>Mrs. Jemimah Mmoja- Head of Fuculty Business</li>
+                <li>Mrs. Jemimah Mmoja- Head of School of Law</li>
+            </ol>
+        </div>
+        
+        <div id="tab2-content" class="tab-content">
+            <h2>Fuculties tab</h2>
+            <p> The following is a brief of the fuculties in our school</p>
+            <dl>
+                <dt>Fuculty Science Engineering and tecgnology</dt>
+                <dd>This is the fuculty within which the physical sciences fall. It also involve technical 
+                    courses such as engineering and many others</dd>
+                    <dt>Fuculty Agriculture</dt>
+                    <dd>If your interest fall for science and art 
+                        for tilling the land and rearing of livestocks,
+                         then this is the fuculty for you</dd>
+                         <dt>Fuculty Humanities</dt>
+                         <dd>This is the fuculty for social sciences</dd>
+                         <dt>Fuculty Business</dt>
+                         <dd>This is the business school</dd>
+                         <dt>School of Law</dt>
+                         <dd>A section aimed at training on legislation</dd>
+            </dl>
+        </div>
+        
+        <div id="tab3-content" class="tab-content">
+            <h2> Our branches</h2>
+            <p>Below are our branches and their locations</p>
+            <ol type="i">
+<li>Mombasa campus - Located within Mombasa CBD </li>
+<li>Chuka campus - Located along Nairobi-Meru Highway </li>
+<li>Maseno campus - Located within the Kisumu Vihiga border </li>
+<li>Kibabi campus - Located in Bungoma county </li>
+            </ol>
+        </div>
+        
+        <div id="tab4-content" class="tab-content">
+            <h2>Leaders tab</h2>
+            <p>Our School leadership is as described below</p>
+            <ol>
+                <li>Mr.John Njoroge -Principal Tusome School</li>
+                <li>Brian Kimutai -Students' Leader</li>
+                <li>Levi Raul -Fuculty of Engineering, Science and Technology representatives</li>
+                <li>Jeremiah Osiepa -Representative Fuculty of Agriculture</li>
+                <li>Isabelah Nyaboke - Representative Fuculty of Humanities</li>
+                <li>James Musya -Representative Fuculty of Business</li>
+                <li>Neema mpendwa -Representative School of Law</li>
+
+            </ol>>
+
+        </div>
+         <div id="tab5-content" class="tab-content">
+            <h2>Contact Us</h2>
+            <p>You can reach us through the following</p>
+            <ul style="none">
+                <li>Email :tusomepmoja@wasomi.go.ke</li>
+                <li>Phone :0700 xxx xxxx</li>
+                <li>@tusomepamoja1</li>
+                <li>Facebook :TusomePamoja</li>
+            </ul>
+
+        </div>
+    </div>
+    
+    <script>
+        // Function to show the selected tab content
+        function showTab(tabNumber) {
+            var tabs = document.getElementsByClassName('tab');
+            var tabContents = document.getElementsByClassName('tab-content');
+            
+            // Hide all tab contents
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = 'none';
+            }
+            
+            // Deactivate all tabs
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.backgroundColor = 'inherit';
+            }
+            
+            // Show the selected tab content and activate the tab
+            document.getElementById('tab' + tabNumber + '-content').style.display = 'block';
+            tabs[tabNumber - 1].style.backgroundColor = '#333';
+        }
+        
+        // Show the first tab content by default
+        showTab(1);
+        
+        
+    </script>
+</body>
+</html>
